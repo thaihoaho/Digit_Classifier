@@ -40,7 +40,7 @@ Cài đặt frontend:
 ```bash
 cd digit-classifier
 npm install
-npm start
+npm dev
 ```
 
 Cài đặt backend:

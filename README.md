@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Giao diện kiểm thử mô hình học máy bằng React
 
-## Getting Started
+## Mục tiêu
 
-First, run the development server:
+- Cho phép người dùng vẽ tay chữ số và nhận kết quả dự đoán từ mô hình học máy.
+
+## Công nghệ
+
+- **Vite + React**: Giao diện người dùng.
+- **Flask**: Backend xử lý ảnh và gọi mô hình.
+- **joblib**: Lưu trữ và nạp mô hình học máy.
+
+## Chức năng chính
+
+- Vẽ chữ số trên canvas.
+- `Dự đoán với KNN`, `Dự đoán với Neural Network`.
+- Hiển thị kết quả dự đoán từ backend.
+
+## Kết nối Backend
+
+- Gửi ảnh vẽ tay đến backend Flask qua HTTP POST.
+- Backend trả về kết quả dự đoán dưới dạng JSON.
+
+## Hướng dẫn cài đặt
+
+### Cài đặt yêu cầu phần mềm
+
+- **Python 3.x**, **Node.js**.
+
+### Cài đặt ứng dụng từ github
+
+Clone mã nguồn (nếu chưa có):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/thaihoaho/digit-classifier.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Cài đặt frontend:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd digit-classifier
+npm install
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Cài đặt backend:
 
-## Learn More
+```bash
+cd backend
+pip install -r requirements.txt
+python3 app.py
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Truy cập ứng dụng tại `http://localhost:3000`.
